@@ -1,0 +1,43 @@
+name: CI/CD workflow
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  building:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install NPM dependencies
+        run: npm install
+      - name: Compile assets
+        run: npm run build
+  deploy:
+    needs: building
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: GHPages
+      - name: Reset production branch
+        run: |
+          git fetch origin main:main
+          git rebase main -s ours
+      - name: Compile assets
+        run: |
+          npm install
+          npm run build
+      - name: Commit files
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git commit -m "Updated assets" -a
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: GHPages
+          force: true
