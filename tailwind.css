@@ -619,10 +619,59 @@ video {
   display: none;
 }
 
+.h-screen {
+  height: 100vh;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
 
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+}
+
+.bg-gradient-to-b {
+  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+}
+
+.from-violet-soft {
+  --tw-gradient-from: hsl(273, 75%, 66%);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, hsla(273, 75%, 66%, 0));
+}
+
+.to-blue-soft {
+  --tw-gradient-to: hsl(240, 73%, 65%);
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.pb-3 {
+  padding-bottom: 0.75rem;
+}
+
 .font-kumbh-sans {
   font-family: Kumbh Sans, sans-serif;
+}
+
+.font-bold {
+  font-weight: 700;
 }

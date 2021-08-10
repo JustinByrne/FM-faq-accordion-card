@@ -12,10 +12,10 @@
     <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
     </head>
 
-    <body>
-        <div class="font-kumbh-sans" x-data="{ open: '2' }">
-            <div>
-                <div class="cursor-pointer" @click="open = 1">
+    <body class="bg-gradient-to-b from-violet-soft to-blue-soft min-h-screen px-6">
+        <div class="font-kumbh-sans bg-white" x-data="{ open: '2' }">
+            <div class="py-4">
+                <div class="cursor-pointer" @click="open = 1" :class="{ 'font-bold': open == 1 }">
                     How many team members can I invite?
                 </div>
                 <div :class="{ 'hidden': open != 1 }">
@@ -23,16 +23,18 @@
                     team members for the Premium plan.
                 </div>
             </div>
-            <div>
-                <div class="cursor-pointer" @click="open = 2">
+            <hr>
+            <div class="py-4">
+                <div class="cursor-pointer" @click="open = 2" :class="{ 'font-bold pb-3': open == 2 }">
                     What is the maximum file upload size?
                 </div>
                 <div :class="{ 'hidden': open != 2 }">
                     No more than 2GB. All files in your account must fit your allotted storage space.
                 </div>
             </div>
-            <div>
-                <div class="cursor-pointer" @click="open = 3">
+            <hr>
+            <div class="py-4">
+                <div class="cursor-pointer" @click="open = 3" :class="{ 'font-bold': open == 3 }">
                     How do I reset my password?
                 </div>
                 <div :class="{ 'hidden': open != 3 }">
@@ -40,16 +42,18 @@
                     A reset link will be emailed to you.
                 </div>
             </div>
-            <div>
-                <div class="cursor-pointer" @click="open = 4">
+            <hr>
+            <div class="py-4">
+                <div class="cursor-pointer" @click="open = 4" :class="{ 'font-bold': open == 4 }">
                     Can I cancel my subscription?
                 </div>
                 <div :class="{ 'hidden': open != 4 }">
                     Yes! Send us a message and we’ll process your request no questions asked.
                 </div>
             </div>
-            <div>
-                <div class="cursor-pointer" @click="open = 5">
+            <hr>
+            <div class="py-4">
+                <div class="cursor-pointer" @click="open = 5" :class="{ 'font-bold': open == 5 }">
                     Do you provide additional support?
                 </div>
                 <div :class="{ 'hidden': open != 5 }">
