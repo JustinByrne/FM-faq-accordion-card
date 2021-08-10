@@ -622,3 +622,7 @@ video {
 .cursor-pointer {
   cursor: pointer;
 }
+
+.font-kumbh-sans {
+  font-family: Kumbh Sans, sans-serif;
+}
