@@ -12,55 +12,83 @@
     <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
     </head>
 
-    <body class="bg-gradient-to-b from-violet-soft to-blue-soft min-h-screen px-6">
-        <div class="font-kumbh-sans bg-white px-4 pb-12 rounded-3xl overflow-hidden drop-shadow-lg shadow-lg" x-data="{ open: '2' }">
-            <div class="py-4">
-                <div class="cursor-pointer" @click="open = toggle(open, 1)" :class="{ 'font-bold pb-3': open == 1 }">
-                    How many team members can I invite?
+    <body>
+        <div class="flex justify-center items-center bg-gradient-to-b from-violet-soft to-blue-soft min-h-screen px-6">
+            <main class="font-kumbh-sans bg-white px-4 pb-12 pt-28 rounded-3xl drop-shadow-2xl shadow-2xl relative w-full" x-data="{ open: '2' }">
+                <div class="lg:hidden absolute top-[-6.5rem]">
+                    <img src="./images/illustration-woman-online-mobile.svg">
                 </div>
-                <div class="text-blue-very-dark-grayish" :class="{ 'hidden': open != 1 }">
-                    You can invite up to 2 additional users on the Free plan. There is no limit on 
-                    team members for the Premium plan.
+                <div class="lg:hidden absolute -top-1 left-10">
+                    <img src="./images/bg-pattern-mobile.svg">
                 </div>
-            </div>
-            <hr class="border-t border-blue-light-grayish">
-            <div class="py-4">
-                <div class="cursor-pointer" @click="open = toggle(open, 2)" :class="{ 'font-bold pb-3': open == 2 }">
-                    What is the maximum file upload size?
+                <div>
+                    <h1 class="font-bold text-3xl text-center">
+                        FAQ
+                    </h1>
                 </div>
-                <div class="text-blue-very-dark-grayish" :class="{ 'hidden': open != 2 }">
-                    No more than 2GB. All files in your account must fit your allotted storage space.
+                <div class="py-4 text-sm">
+                    <div class="cursor-pointer flex justify-between items-center" @click="open = toggle(open, 1)" :class="{ 'font-bold pb-3': open == 1 }">
+                        <h2>
+                            How many team members can I invite?
+                        </h2>
+                        <img class="transition ease-in-out duration-300" src="./images/icon-arrow-down.svg" :class="{ 'rotate-180': open == 1 }">
+                    </div>
+                    <div class="text-blue-very-dark-grayish pr-6 text-[0.8rem]" :class="{ 'hidden': open != 1 }">
+                        You can invite up to 2 additional users on the Free plan. There is no limit on 
+                        team members for the Premium plan.
+                    </div>
                 </div>
-            </div>
-            <hr class="border-t border-blue-light-grayish">
-            <div class="py-4">
-                <div class="cursor-pointer" @click="open = toggle(open, 3)" :class="{ 'font-bold pb-3': open == 3 }">
-                    How do I reset my password?
+                <hr class="border-t border-blue-light-grayish">
+                <div class="py-4 text-sm">
+                    <div class="cursor-pointer flex justify-between items-center" @click="open = toggle(open, 2)" :class="{ 'font-bold pb-3': open == 2 }">
+                        <h2>
+                            What is the maximum file upload size?
+                        </h2>
+                        <img class="transition ease-in-out duration-300" src="./images/icon-arrow-down.svg" :class="{ 'rotate-180': open == 2 }">
+                    </div>
+                    <div class="text-blue-very-dark-grayish pr-6 text-[0.8rem]" :class="{ 'hidden': open != 2 }">
+                        No more than 2GB. All files in your account must fit your allotted storage space.
+                    </div>
                 </div>
-                <div class="text-blue-very-dark-grayish" :class="{ 'hidden': open != 3 }">
-                    Click “Forgot password” from the login page or “Change password” from your profile page.
-                    A reset link will be emailed to you.
+                <hr class="border-t border-blue-light-grayish">
+                <div class="py-4 text-sm">
+                    <div class="cursor-pointer flex justify-between items-center" @click="open = toggle(open, 3)" :class="{ 'font-bold pb-3': open == 3 }">
+                        <h2>
+                            How do I reset my password?
+                        </h2>
+                        <img class="transition ease-in-out duration-300" src="./images/icon-arrow-down.svg" :class="{ 'rotate-180': open == 3 }">
+                    </div>
+                    <div class="text-blue-very-dark-grayish pr-6 text-[0.8rem]" :class="{ 'hidden': open != 3 }">
+                        Click “Forgot password” from the login page or “Change password” from your profile page.
+                        A reset link will be emailed to you.
+                    </div>
                 </div>
-            </div>
-            <hr class="border-t border-blue-light-grayish">
-            <div class="py-4">
-                <div class="cursor-pointer" @click="open = toggle(open, 4)" :class="{ 'font-bold pb-3': open == 4 }">
-                    Can I cancel my subscription?
+                <hr class="border-t border-blue-light-grayish">
+                <div class="py-4 text-sm">
+                    <div class="cursor-pointer flex justify-between items-center" @click="open = toggle(open, 4)" :class="{ 'font-bold pb-3': open == 4 }">
+                        <h2>
+                            Can I cancel my subscription?
+                        </h2>
+                        <img class="transition ease-in-out duration-300" src="./images/icon-arrow-down.svg" :class="{ 'rotate-180': open == 4 }">
+                    </div>
+                    <div class="text-blue-very-dark-grayish pr-6 text-[0.8rem]" :class="{ 'hidden': open != 4 }">
+                        Yes! Send us a message and we’ll process your request no questions asked.
+                    </div>
                 </div>
-                <div class="text-blue-very-dark-grayish" :class="{ 'hidden': open != 4 }">
-                    Yes! Send us a message and we’ll process your request no questions asked.
+                <hr class="border-t border-blue-light-grayish">
+                <div class="py-4 text-sm">
+                    <div class="cursor-pointer flex justify-between items-center" @click="open = toggle(open, 5)" :class="{ 'font-bold pb-3': open == 5 }">
+                        <h2>
+                            Do you provide additional support?
+                        </h2>
+                        <img class="transition ease-in-out duration-300" src="./images/icon-arrow-down.svg" :class="{ 'rotate-180': open == 5 }">
+                    </div>
+                    <div class="text-blue-very-dark-grayish pr-6 text-[0.8rem]" :class="{ 'hidden': open != 5 }">
+                        Chat and email support is available 24/7. Phone lines are open during normal business hours.
+                    </div>
                 </div>
-            </div>
-            <hr class="border-t border-blue-light-grayish">
-            <div class="py-4">
-                <div class="cursor-pointer" @click="open = toggle(open, 5)" :class="{ 'font-bold pb-3': open == 5 }">
-                    Do you provide additional support?
-                </div>
-                <div class="text-blue-very-dark-grayish" :class="{ 'hidden': open != 5 }">
-                    Chat and email support is available 24/7. Phone lines are open during normal business hours.
-                </div>
-            </div>
-            <hr class="border-t border-blue-light-grayish">
+                <hr class="border-t border-blue-light-grayish">
+            </main>
         </div>
         <script>
             function toggle(open, value) {
