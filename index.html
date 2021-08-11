@@ -15,7 +15,7 @@
     <body class="bg-gradient-to-b from-violet-soft to-blue-soft min-h-screen px-6">
         <div class="font-kumbh-sans bg-white px-4 pb-12 rounded-3xl overflow-hidden drop-shadow-lg shadow-lg" x-data="{ open: '2' }">
             <div class="py-4">
-                <div class="cursor-pointer flex justify-around" @click="open = toggle(open, 1)" :class="{ 'font-bold pb-3': open == 1 }">
+                <div class="cursor-pointer" @click="open = toggle(open, 1)" :class="{ 'font-bold pb-3': open == 1 }">
                     How many team members can I invite?
                 </div>
                 <div class="text-blue-very-dark-grayish" :class="{ 'hidden': open != 1 }">
