@@ -13,81 +13,96 @@
     </head>
 
     <body>
-        <div class="flex justify-center items-center bg-gradient-to-b from-violet-soft to-blue-soft min-h-screen px-6">
-            <main class="font-kumbh-sans bg-white px-4 pb-12 pt-28 rounded-3xl drop-shadow-2xl shadow-2xl relative w-full" x-data="{ open: '2' }">
-                <div class="lg:hidden absolute top-[-6.5rem]">
-                    <img src="./images/illustration-woman-online-mobile.svg">
-                </div>
-                <div class="lg:hidden absolute -top-1 left-10">
-                    <img src="./images/bg-pattern-mobile.svg">
-                </div>
-                <div>
-                    <h1 class="font-bold text-3xl text-center">
-                        FAQ
-                    </h1>
-                </div>
-                <div class="py-4 text-sm">
-                    <div class="cursor-pointer flex justify-between items-center" @click="open = toggle(open, 1)" :class="{ 'font-bold pb-3': open == 1 }">
-                        <h2>
-                            How many team members can I invite?
-                        </h2>
-                        <img class="transition ease-in-out duration-300" src="./images/icon-arrow-down.svg" :class="{ 'rotate-180': open == 1 }">
+        <div class="flex justify-center items-center bg-gradient-to-b from-violet-soft to-blue-soft min-h-screen px-6 pt-16 relative">
+            <div class="hidden lg:block absolute z-20 left-[11rem] bottom-[13rem]">
+                <img src="./images/illustration-box-desktop.svg">
+            </div>
+            <main class="font-kumbh-sans bg-white px-4 pb-12 pt-32 lg:py-16 rounded-3xl drop-shadow-2xl shadow-2xl w-full lg:max-w-4xl grid grid-cols-1 lg:grid-cols-2 lg:overflow-hidden" x-data="{ open: '2' }">
+                <div class="relative lg:hidden">
+                    <div class="absolute -top-60">
+                        <img src="./images/illustration-woman-online-mobile.svg">
                     </div>
-                    <div class="text-blue-very-dark-grayish pr-6 text-[0.8rem]" :class="{ 'hidden': open != 1 }">
-                        You can invite up to 2 additional users on the Free plan. There is no limit on 
-                        team members for the Premium plan.
+                    <div class="absolute -top-32 left-6">
+                        <img src="./images/bg-pattern-mobile.svg">
                     </div>
                 </div>
-                <hr class="border-t border-blue-light-grayish">
-                <div class="py-4 text-sm">
-                    <div class="cursor-pointer flex justify-between items-center" @click="open = toggle(open, 2)" :class="{ 'font-bold pb-3': open == 2 }">
-                        <h2>
-                            What is the maximum file upload size?
-                        </h2>
-                        <img class="transition ease-in-out duration-300" src="./images/icon-arrow-down.svg" :class="{ 'rotate-180': open == 2 }">
+                <div class="hidden lg:block">
+                    <div class="absolute -left-20 z-10">
+                        <img src="./images/illustration-woman-online-desktop.svg">
                     </div>
-                    <div class="text-blue-very-dark-grayish pr-6 text-[0.8rem]" :class="{ 'hidden': open != 2 }">
-                        No more than 2GB. All files in your account must fit your allotted storage space.
+                    <div class="absolute left-[-64%] -top-2/3 z-0">
+                        <img src="./images/bg-pattern-desktop.svg">
                     </div>
                 </div>
-                <hr class="border-t border-blue-light-grayish">
-                <div class="py-4 text-sm">
-                    <div class="cursor-pointer flex justify-between items-center" @click="open = toggle(open, 3)" :class="{ 'font-bold pb-3': open == 3 }">
-                        <h2>
-                            How do I reset my password?
-                        </h2>
-                        <img class="transition ease-in-out duration-300" src="./images/icon-arrow-down.svg" :class="{ 'rotate-180': open == 3 }">
+                <div class="lg:pr-20">
+                    <div>
+                        <h1 class="font-bold text-3xl text-center lg:text-left">
+                            FAQ
+                        </h1>
                     </div>
-                    <div class="text-blue-very-dark-grayish pr-6 text-[0.8rem]" :class="{ 'hidden': open != 3 }">
-                        Click “Forgot password” from the login page or “Change password” from your profile page.
-                        A reset link will be emailed to you.
+                    <div class="py-4 text-sm">
+                        <div class="cursor-pointer flex justify-between items-center" @click="open = toggle(open, 1)" :class="{ 'font-bold pb-3': open == 1 }">
+                            <h2>
+                                How many team members can I invite?
+                            </h2>
+                            <img class="transition ease-in-out duration-300" src="./images/icon-arrow-down.svg" :class="{ 'rotate-180': open == 1 }">
+                        </div>
+                        <div class="text-blue-very-dark-grayish pr-6 text-[0.8rem]" :class="{ 'hidden': open != 1 }">
+                            You can invite up to 2 additional users on the Free plan. There is no limit on 
+                            team members for the Premium plan.
+                        </div>
                     </div>
+                    <hr class="border-t border-blue-light-grayish">
+                    <div class="py-4 text-sm">
+                        <div class="cursor-pointer flex justify-between items-center" @click="open = toggle(open, 2)" :class="{ 'font-bold pb-3': open == 2 }">
+                            <h2>
+                                What is the maximum file upload size?
+                            </h2>
+                            <img class="transition ease-in-out duration-300" src="./images/icon-arrow-down.svg" :class="{ 'rotate-180': open == 2 }">
+                        </div>
+                        <div class="text-blue-very-dark-grayish pr-6 text-[0.8rem]" :class="{ 'hidden': open != 2 }">
+                            No more than 2GB. All files in your account must fit your allotted storage space.
+                        </div>
+                    </div>
+                    <hr class="border-t border-blue-light-grayish">
+                    <div class="py-4 text-sm">
+                        <div class="cursor-pointer flex justify-between items-center" @click="open = toggle(open, 3)" :class="{ 'font-bold pb-3': open == 3 }">
+                            <h2>
+                                How do I reset my password?
+                            </h2>
+                            <img class="transition ease-in-out duration-300" src="./images/icon-arrow-down.svg" :class="{ 'rotate-180': open == 3 }">
+                        </div>
+                        <div class="text-blue-very-dark-grayish pr-6 text-[0.8rem]" :class="{ 'hidden': open != 3 }">
+                            Click “Forgot password” from the login page or “Change password” from your profile page.
+                            A reset link will be emailed to you.
+                        </div>
+                    </div>
+                    <hr class="border-t border-blue-light-grayish">
+                    <div class="py-4 text-sm">
+                        <div class="cursor-pointer flex justify-between items-center" @click="open = toggle(open, 4)" :class="{ 'font-bold pb-3': open == 4 }">
+                            <h2>
+                                Can I cancel my subscription?
+                            </h2>
+                            <img class="transition ease-in-out duration-300" src="./images/icon-arrow-down.svg" :class="{ 'rotate-180': open == 4 }">
+                        </div>
+                        <div class="text-blue-very-dark-grayish pr-6 text-[0.8rem]" :class="{ 'hidden': open != 4 }">
+                            Yes! Send us a message and we’ll process your request no questions asked.
+                        </div>
+                    </div>
+                    <hr class="border-t border-blue-light-grayish">
+                    <div class="py-4 text-sm">
+                        <div class="cursor-pointer flex justify-between items-center" @click="open = toggle(open, 5)" :class="{ 'font-bold pb-3': open == 5 }">
+                            <h2>
+                                Do you provide additional support?
+                            </h2>
+                            <img class="transition ease-in-out duration-300" src="./images/icon-arrow-down.svg" :class="{ 'rotate-180': open == 5 }">
+                        </div>
+                        <div class="text-blue-very-dark-grayish pr-6 text-[0.8rem]" :class="{ 'hidden': open != 5 }">
+                            Chat and email support is available 24/7. Phone lines are open during normal business hours.
+                        </div>
+                    </div>
+                    <hr class="border-t border-blue-light-grayish">
                 </div>
-                <hr class="border-t border-blue-light-grayish">
-                <div class="py-4 text-sm">
-                    <div class="cursor-pointer flex justify-between items-center" @click="open = toggle(open, 4)" :class="{ 'font-bold pb-3': open == 4 }">
-                        <h2>
-                            Can I cancel my subscription?
-                        </h2>
-                        <img class="transition ease-in-out duration-300" src="./images/icon-arrow-down.svg" :class="{ 'rotate-180': open == 4 }">
-                    </div>
-                    <div class="text-blue-very-dark-grayish pr-6 text-[0.8rem]" :class="{ 'hidden': open != 4 }">
-                        Yes! Send us a message and we’ll process your request no questions asked.
-                    </div>
-                </div>
-                <hr class="border-t border-blue-light-grayish">
-                <div class="py-4 text-sm">
-                    <div class="cursor-pointer flex justify-between items-center" @click="open = toggle(open, 5)" :class="{ 'font-bold pb-3': open == 5 }">
-                        <h2>
-                            Do you provide additional support?
-                        </h2>
-                        <img class="transition ease-in-out duration-300" src="./images/icon-arrow-down.svg" :class="{ 'rotate-180': open == 5 }">
-                    </div>
-                    <div class="text-blue-very-dark-grayish pr-6 text-[0.8rem]" :class="{ 'hidden': open != 5 }">
-                        Chat and email support is available 24/7. Phone lines are open during normal business hours.
-                    </div>
-                </div>
-                <hr class="border-t border-blue-light-grayish">
             </main>
         </div>
         <script>
